@@ -7,7 +7,7 @@ KVC是一種間接存取物件屬性的機制，使用字串來辨別屬性，�
 
 Accessor methods, as the name suggests, provide access to your application’s data model’s property values. There are two basic forms of accessor—get accessors and set accessors. Get accessors, also referred to as getters, return the values of a property. Set accessors, also referred to as setters, set the value of a property. There are getter and setter variants for dealing with both object attributes and to-many relationships.
 
-存取方法，顧名思義，它提供了存取你的應用程式資料模型的屬性值，accessor有著2種的基礎形式get accessors 和 set accessors，get accessors被稱為getters，它會回傳屬性的值， set accessors也被稱為setters，它能設定屬性的值，There are getter and setter variants for dealing with both object attributes and to-many relationships.
+存取方法，顧名思義，它提供了存取你的應用程式資料模型的屬性值，accessor有著2種的基礎形式`get accessors` 和`set accessors`，`get accessors`被稱為`getters`，它會回傳屬性的值， `set accessors`也被稱為`setters`，它能設定屬性的值。 There are getter and setter variants for dealing with both object attributes and to-many relationships.
 
 Implementing key-value coding compliant accessors in your application is an important design principle. Accessors help to enforce proper data encapsulation and facilitate integration with other technologies such as key-value observing, Core Data, Cocoa bindings, and scriptability. Key-value coding methods can, in many cases, also be utilized to simplify your application’s code.
 

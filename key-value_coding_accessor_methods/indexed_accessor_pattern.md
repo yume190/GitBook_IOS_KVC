@@ -9,37 +9,40 @@ Getter Indexed Accessors
 
 In order to support read-only access to an ordered to-many relationship, implement the following methods:
 
--countOf<Key>. Required. This is the analogous to the NSArray primitive method count.
--objectIn<Key>AtIndex: or -<key>AtIndexes:. One of these methods must be implemented. They correspond to the NSArray methods objectAtIndex: and objectsAtIndexes:.
--get<Key>:range:. Implementing this method is optional, but offers additional performance gains. This method corresponds to the NSArray method getObjects:range:.
-An implementation of the -countOf<Key> method simply returns the number of objects in the to-many relationship as an NSUInteger. The code fragment in Listing 4 illustrates the -countOf<Key> implementation for the to-many relationship property employees.
+ * `-countOf<Key>`. Required. This is the analogous to the NSArray primitive method count.
 
-Listing 4  Example -count<Key> implementation
-- (NSUInteger)countOfEmployees {
-    return [self.employees count];
-}
-The -objectIn<Key>AtIndex: method returns the object at the specified index in the to-many relationship. The -<key>AtIndexes: accessor form returns an array of objects at the indexes specified by the NSIndexSet parameter. Only one of these two methods must be implemented.
+ * `-objectIn<Key>AtIndex:` or `-<key>AtIndexes:`. One of these methods must be implemented. They correspond to the NSArray methods `objectAtIndex:` and `objectsAtIndexes:`.
 
-The code fragment in Listing 5 shows -objectIn<Key>AtIndex: and -<key>AtIndexes: implementations for a to-many relationship property employees.
+ * `-get<Key>:range:`. Implementing this method is optional, but offers additional performance gains. This method corresponds to the NSArray method `getObjects:range:`.
 
-Listing 5  Example -objectIn<Key>AtIndex: and -<key>AtIndexes: implementations
-- (id)objectInEmployeesAtIndex:(NSUInteger)index {
-    return [employees objectAtIndex:index];
-}
+An implementation of the `-countOf<Key>` method simply returns the number of objects in the to-many relationship as an NSUInteger. The code fragment in Listing 4 illustrates the `-countOf<Key>` implementation for the to-many relationship property employees.
 
-- (NSArray *)employeesAtIndexes:(NSIndexSet *)indexes {
-    return [self.employees objectsAtIndexes:indexes];
-}
+__Listing 4__  Example `-count<Key>` implementation
+    - (NSUInteger)countOfEmployees {
+        return [self.employees count];
+    }
+The `-objectIn<Key>AtIndex:` method returns the object at the specified index in the to-many relationship. The `-<key>AtIndexes:` accessor form returns an array of objects at the indexes specified by the NSIndexSet parameter. Only one of these two methods must be implemented.
+
+The code fragment in Listing 5 shows `-objectIn<Key>AtIndex:` and `-<key>AtIndexes:` implementations for a to-many relationship property employees.
+
+__Listing 5__  Example `-objectIn<Key>AtIndex:` and `-<key>AtIndexes:` implementations
+    - (id)objectInEmployeesAtIndex:(NSUInteger)index {
+        return [employees objectAtIndex:index];
+    }
+
+    - (NSArray *)employeesAtIndexes:(NSIndexSet *)indexes {
+        return [self.employees objectsAtIndexes:indexes];
+    }
 If benchmarking indicates that performance improvements are required, you can also implement -get<Key>:range:. Your implementation of this accessor should return in the buffer given as the first parameter the objects that fall within the range specified by the second parameter.
 
 Listing 6 shows an example implementation of the -get<Key>:range: accessor pattern for the to-many employees property.
 
-Listing 6  Example -get<Key>:range: implementation
-- (void)getEmployees:(Employee * __unsafe_unretained *)buffer range:(NSRange)inRange {
-    // Return the objects in the specified range in the provided buffer.
-    // For example, if the employees were stored in an underlying NSArray
-    [self.employees getObjects:buffer range:inRange];
-}
+__Listing 6__  Example `-get<Key>:range:` implementation
+    - (void)getEmployees:(Employee * __unsafe_unretained *)buffer range:(NSRange)inRange {
+        // Return the objects in the specified range in the provided buffer.
+        // For example, if the employees were stored in an underlying NSArray
+        [self.employees getObjects:buffer range:inRange];
+    }
 Mutable Indexed Accessors
 
 Supporting a mutable to-many relationship with indexed accessors requires implementing additional methods. Implementing the mutable indexed accessors allow your application to interact with the indexed collection in an easy and efficient manner by using the array proxy returned by mutableArrayValueForKey:. In addition, by implementing these methods for a to-many relationship your class will be key-value observing compliant for that property (see Key-Value Observing Programming Guide).

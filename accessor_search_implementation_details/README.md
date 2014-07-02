@@ -1,0 +1,1 @@
+# Accessor Search Implementation Details

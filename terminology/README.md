@@ -4,15 +4,15 @@
 
 In addition to overloading existing terms, key-value coding defines some unique terminology of its own.
 
-In addition to overloading existing terms,KVC定義了一些它自己特有的術語
+此外，除了既有的術語，KVC也定義了一些它自己特有的術語
 
 Key-value coding can be used to access three different types of object values: attributes, to-one relationships, and to-many relationships. The term property refers to any of these types of values.
 
-KVC可用於存取三種不同的物件值：attributes, to-one relationships, and to-many relationships. The term property refers to any of these types of values.
+KVC可用於存取三種不同的物件值：分別是attributes,1對1關係, 1對多關係。 The term property refers to any of these types of values.
 
 An attribute is a property that is a simple value, such as a scalar, string, or Boolean value. Value objects such as NSNumber and other immutable types such as as NSColor are also considered attributes.
 
-attribute是一個簡單值的property，舉例來說 存量，字串或者布林值。Value objects 例如NSNumber和其他不可變的類型如NSColor也被歸類與此。
+Attribute是一個簡單值的property，舉例來說`純量`，字串或者布林值。值物件(`Value objects`)例如NSNumber和其他不可變的類型如`NSColor`也被歸類與此。
 
 A property that specifies a to-one relationship is an object that has properties of its own. These underlying properties can change without the object itself changing. For example, an NSView instance’s superview is a to-one relationship.
 

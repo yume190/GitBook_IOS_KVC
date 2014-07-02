@@ -1,0 +1,610 @@
+<!DOCTYPE HTML>
+<html lang="en-US" manifest="../manifest.appcache">
+    
+    <head>
+        
+        <meta charset="UTF-8">
+        <title>Key-Value Coding Fundamentals | Introduction</title>
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 0.5.2">
+        <meta name="HandheldFriendly" content="true"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+        
+    
+    
+    <meta name="author" content="yume190">
+    
+    
+    <link rel="next" href="../key-value_coding_fundamentals/keys_and_key_paths.html" />
+    
+    
+    <link rel="prev" href="../terminology/README.html" />
+    
+
+        
+    </head>
+    <body>
+        
+        
+<link rel="stylesheet" href="../gitbook/style.css">
+
+
+        
+    <div class="book" data-github="yume190/GitBook_IOS_KVC" data-level="3" data-basepath=".." data-revision="1404261802417">
+    <div class="book-header">
+    <!-- Actions Left -->
+    <a href="#" class="btn pull-left toggle-summary" aria-label="Toggle summary"><i class="fa fa-align-justify"></i></a>
+    
+    <a href="https://github.com/yume190/GitBook_IOS_KVC" target="_blank" class="btn pull-left home-bookmark" aria-label="GitHub home"><i class="fa fa-bookmark-o"></i></a>
+    
+    <a href="#" class="btn pull-left toggle-search" aria-label="Toggle search"><i class="fa fa-search"></i></a>
+    <span id="font-settings-wrapper">
+        <a href="#" class="btn pull-left toggle-font-settings" aria-label="Toggle font settings"><i class="fa fa-font"></i>
+        </a>
+        <div class="dropdown-menu font-settings">
+    <div class="dropdown-caret">
+        <span class="caret-outer"></span>
+        <span class="caret-inner"></span>
+    </div>
+
+    <div class="btn-group btn-block">
+        <button id="reduce-font-size" class="btn btn-default">A</button>
+        <button id="enlarge-font-size" class="btn btn-default">A</button>
+    </div>
+
+    <ul class="list-group font-family-list">
+        <li class="list-group-item" data-font="0">Serif</li>
+        <li class="list-group-item" data-font="1">Sans</li>
+    </ul>
+
+    <div class="btn-group btn-group-xs btn-block color-theme-list">
+        <button type="button" class="btn btn-default" id="color-theme-preview-0" data-theme="0">White</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-1" data-theme="1">Sepia</button>
+        <button type="button" class="btn btn-default" id="color-theme-preview-2" data-theme="2">Night</button>
+    </div>
+</div>
+
+    </span>
+
+    <!-- Actions Right -->
+    
+    <a href="#" target="_blank" class="btn pull-right google-plus-sharing-link sharing-link" data-sharing="google-plus" aria-label="Share on Google Plus"><i class="fa fa-google-plus"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right facebook-sharing-link sharing-link" data-sharing="facebook" aria-label="Share on Facebook"><i class="fa fa-facebook"></i></a>
+    
+    
+    <a href="#" target="_blank" class="btn pull-right twitter-sharing-link sharing-link" data-sharing="twitter" aria-label="Share on Twitter"><i class="fa fa-twitter"></i></a>
+    
+
+    
+    <a href="https://github.com/yume190/GitBook_IOS_KVC/stargazers" target="_blank" class="btn pull-right count-star hidden-xs"><i class="fa fa-star-o"></i> Star (<span>-</span>)</a>
+    <a href="https://github.com/yume190/GitBook_IOS_KVC/watchers" target="_blank" class="btn pull-right count-watch hidden-xs"><i class="fa fa-eye"></i> Watch (<span>-</span>)</a>
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-spinner fa-spin"></i>
+        <a href="../" >Introduction</a>
+    </h1>
+</div>
+
+    
+
+<div class="book-summary">
+    <div class="book-search">
+        <input type="text" placeholder="Search" class="form-control" />
+    </div>
+    <ul class="summary">
+        
+        
+        
+        <li>
+            <a href="https://github.com/yume190" target="blank" class="author-link">About the author</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/yume190/GitBook_IOS_KVC/issues" target="blank"class="issues-link">Questions and Issues</a>
+        </li>
+        
+
+        
+        
+        <li>
+            <a href="https://github.com/yume190/GitBook_IOS_KVC/edit/master/key-value_coding_fundamentals/README.md" target="blank" class="contribute-link">Edit and Contribute</a>
+        </li>
+        
+
+        
+        <li class="divider"></li>
+        
+
+        <li data-level="0" data-path="index.html">
+            <a href="../"><i class="fa fa-check"></i> Introduction</a>
+        </li>
+        
+    
+        <li class="chapter " data-level="1" data-path="what_is_key-value_coding/README.html">
+            
+            <a href="../what_is_key-value_coding/README.html">
+                <i class="fa fa-check"></i> <b>1.</b> What Is Key-Value Coding?
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1" data-path="what_is_key-value_coding/key-value_coding_and_scripting.html">
+            
+            <a href="../what_is_key-value_coding/key-value_coding_and_scripting.html">
+                <i class="fa fa-check"></i> <b>1.1.</b> Key-Value Coding and Scripting
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="what_is_key-value_coding/using_key-value_coding_to_simplify_your_code.html">
+            
+            <a href="../what_is_key-value_coding/using_key-value_coding_to_simplify_your_code.html">
+                <i class="fa fa-check"></i> <b>1.2.</b> Using Key-Value Coding to Simplify Your Code
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="2" data-path="terminology/README.html">
+            
+            <a href="../terminology/README.html">
+                <i class="fa fa-check"></i> <b>2.</b> Terminology
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3" data-path="key-value_coding_fundamentals/README.html">
+            
+            <a href="../key-value_coding_fundamentals/README.html">
+                <i class="fa fa-check"></i> <b>3.</b> Key-Value Coding Fundamentals
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="3.1" data-path="key-value_coding_fundamentals/keys_and_key_paths.html">
+            
+            <a href="../key-value_coding_fundamentals/keys_and_key_paths.html">
+                <i class="fa fa-check"></i> <b>3.1.</b> Keys and Key Paths
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.2" data-path="key-value_coding_fundamentals/getting_attribute_values_using_key-value_coding.html">
+            
+            <a href="../key-value_coding_fundamentals/getting_attribute_values_using_key-value_coding.html">
+                <i class="fa fa-check"></i> <b>3.2.</b> Getting Attribute Values Using Key-Value Coding
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.3" data-path="key-value_coding_fundamentals/setting_attribute_values_using_key-value_coding.html">
+            
+            <a href="../key-value_coding_fundamentals/setting_attribute_values_using_key-value_coding.html">
+                <i class="fa fa-check"></i> <b>3.3.</b> Setting Attribute Values Using Key-Value Coding
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="3.4" data-path="key-value_coding_fundamentals/dot_syntax_and_key-value_coding.html">
+            
+            <a href="../key-value_coding_fundamentals/dot_syntax_and_key-value_coding.html">
+                <i class="fa fa-check"></i> <b>3.4.</b> Dot Syntax and Key-Value Coding
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="4" data-path="key-value_coding_accessor_methods/README.html">
+            
+            <a href="../key-value_coding_accessor_methods/README.html">
+                <i class="fa fa-check"></i> <b>4.</b> Key-Value Coding Accessor Methods
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.1" data-path="key-value_coding_accessor_methods/commonly_used_accessor_patterns.html">
+            
+            <a href="../key-value_coding_accessor_methods/commonly_used_accessor_patterns.html">
+                <i class="fa fa-check"></i> <b>4.1.</b> Commonly Used Accessor Patterns
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2" data-path="key-value_coding_accessor_methods/collection_accessor_patterns_for_to-many_properties.html">
+            
+            <a href="../key-value_coding_accessor_methods/collection_accessor_patterns_for_to-many_properties.html">
+                <i class="fa fa-check"></i> <b>4.2.</b> Collection Accessor Patterns for To-Many Properties
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="4.2.1" data-path="key-value_coding_accessor_methods/indexed_accessor_pattern.html">
+            
+            <a href="../key-value_coding_accessor_methods/indexed_accessor_pattern.html">
+                <i class="fa fa-check"></i> <b>4.2.1.</b> Indexed Accessor Pattern
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="4.2.2" data-path="key-value_coding_accessor_methods/unordered_accessor_pattern.html">
+            
+            <a href="../key-value_coding_accessor_methods/unordered_accessor_pattern.html">
+                <i class="fa fa-check"></i> <b>4.2.2.</b> Unordered Accessor Pattern
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="5" data-path="key-value_validation/README.html">
+            
+            <a href="../key-value_validation/README.html">
+                <i class="fa fa-check"></i> <b>5.</b> Key-Value Validation
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="5.1" data-path="key-value_validation/validation_method_naming_convention">
+            
+            <a href="../key-value_validation/validation_method_naming_convention">
+                <i class="fa fa-check"></i> <b>5.1.</b> Validation Method Naming Convention
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.2" data-path="key-value_validation/implementing_a_validation_method">
+            
+            <a href="../key-value_validation/implementing_a_validation_method">
+                <i class="fa fa-check"></i> <b>5.2.</b> Implementing a Validation Method
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.3" data-path="key-value_validation/invoking_validation_methods">
+            
+            <a href="../key-value_validation/invoking_validation_methods">
+                <i class="fa fa-check"></i> <b>5.3.</b> Invoking Validation Methods
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.4" data-path="key-value_validation/automatic_validation">
+            
+            <a href="../key-value_validation/automatic_validation">
+                <i class="fa fa-check"></i> <b>5.4.</b> Automatic Validation
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="5.5" data-path="key-value_validation/validation_of_scalar_values">
+            
+            <a href="../key-value_validation/validation_of_scalar_values">
+                <i class="fa fa-check"></i> <b>5.5.</b> Validation of Scalar Values
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="6" data-path="ensuring_kvc_compliance/README.html">
+            
+            <a href="../ensuring_kvc_compliance/README.html">
+                <i class="fa fa-check"></i> <b>6.</b> Ensuring KVC Compliance
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="6.1" data-path="ensuring_kvc_compliance/attribute_and_to-one_relationship_compliance">
+            
+            <a href="../ensuring_kvc_compliance/attribute_and_to-one_relationship_compliance">
+                <i class="fa fa-check"></i> <b>6.1.</b> Attribute and To-One Relationship Compliance
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.2" data-path="ensuring_kvc_compliance/indexed_to-many_relationship_compliance">
+            
+            <a href="../ensuring_kvc_compliance/indexed_to-many_relationship_compliance">
+                <i class="fa fa-check"></i> <b>6.2.</b> Indexed To-Many Relationship Compliance
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="6.3" data-path="ensuring_kvc_compliance/unordered_to-many_relationship_compliance">
+            
+            <a href="../ensuring_kvc_compliance/unordered_to-many_relationship_compliance">
+                <i class="fa fa-check"></i> <b>6.3.</b> Unordered To-Many Relationship Compliance
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="7" data-path="scalar_and_structure_support/README.html">
+            
+            <a href="../scalar_and_structure_support/README.html">
+                <i class="fa fa-check"></i> <b>7.</b> Scalar and Structure Support
+            </a>
+            
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="7.1" data-path="scalar_and_structure_support/representing_non-object_values">
+            
+            <a href="../scalar_and_structure_support/representing_non-object_values">
+                <i class="fa fa-check"></i> <b>7.1.</b> Representing Non-Object Values
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.2" data-path="scalar_and_structure_support/handling_nil_values">
+            
+            <a href="../scalar_and_structure_support/handling_nil_values">
+                <i class="fa fa-check"></i> <b>7.2.</b> Handling nil Values
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.3" data-path="scalar_and_structure_support/wrapping_and_unwrapping_scalar_types">
+            
+            <a href="../scalar_and_structure_support/wrapping_and_unwrapping_scalar_types">
+                <i class="fa fa-check"></i> <b>7.3.</b> Wrapping and Unwrapping Scalar Types
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="7.4" data-path="scalar_and_structure_support/wrapping_and_unwrapping_structs">
+            
+            <a href="../scalar_and_structure_support/wrapping_and_unwrapping_structs">
+                <i class="fa fa-check"></i> <b>7.4.</b> Wrapping and Unwrapping Structs
+            </a>
+            
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="8" data-path="collection_operators/README">
+            
+            <a href="../collection_operators/README">
+                <i class="fa fa-check"></i> <b>8.</b> Collection Operators
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="9" data-path="accessor_search_implementation_details/README">
+            
+            <a href="../accessor_search_implementation_details/README">
+                <i class="fa fa-check"></i> <b>9.</b> Accessor Search Implementation Details
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="10" data-path="describing_property_relationships/README">
+            
+            <a href="../describing_property_relationships/README">
+                <i class="fa fa-check"></i> <b>10.</b> Describing Property Relationships
+            </a>
+            
+            
+        </li>
+    
+        <li class="chapter " data-level="11" data-path="performance_considerations/README">
+            
+            <a href="../performance_considerations/README">
+                <i class="fa fa-check"></i> <b>11.</b> Performance Considerations
+            </a>
+            
+            
+        </li>
+    
+
+
+        
+        <li class="divider"></li>
+        <li>
+            <a href="http://www.gitbook.io/" target="blank" class="gitbook-link">Generated using GitBook</a>
+        </li>
+        
+    </ul>
+</div>
+
+    <div class="book-body">
+        <div class="body-inner">
+            <div class="page-wrapper" tabindex="-1">
+                <div class="book-progress">
+    <div class="bar">
+        <div class="inner" style="width: 15.151515151515152%;min-width: 12.121212121212121%;"></div>
+    </div>
+    <div class="chapters">
+    
+        <a href="../index.html" title="Introduction" class="chapter done new-chapter" data-progress="0" style="left: 0%;"></a>
+    
+        <a href="../what_is_key-value_coding/README.html" title="What Is Key-Value Coding?" class="chapter done new-chapter" data-progress="1" style="left: 3.0303030303030303%;"></a>
+    
+        <a href="../what_is_key-value_coding/key-value_coding_and_scripting.html" title="Key-Value Coding and Scripting" class="chapter done " data-progress="1.1" style="left: 6.0606060606060606%;"></a>
+    
+        <a href="../what_is_key-value_coding/using_key-value_coding_to_simplify_your_code.html" title="Using Key-Value Coding to Simplify Your Code" class="chapter done " data-progress="1.2" style="left: 9.090909090909092%;"></a>
+    
+        <a href="../terminology/README.html" title="Terminology" class="chapter done new-chapter" data-progress="2" style="left: 12.121212121212121%;"></a>
+    
+        <a href="../key-value_coding_fundamentals/README.html" title="Key-Value Coding Fundamentals" class="chapter done new-chapter" data-progress="3" style="left: 15.151515151515152%;"></a>
+    
+        <a href="../key-value_coding_fundamentals/keys_and_key_paths.html" title="Keys and Key Paths" class="chapter  " data-progress="3.1" style="left: 18.181818181818183%;"></a>
+    
+        <a href="../key-value_coding_fundamentals/getting_attribute_values_using_key-value_coding.html" title="Getting Attribute Values Using Key-Value Coding" class="chapter  " data-progress="3.2" style="left: 21.21212121212121%;"></a>
+    
+        <a href="../key-value_coding_fundamentals/setting_attribute_values_using_key-value_coding.html" title="Setting Attribute Values Using Key-Value Coding" class="chapter  " data-progress="3.3" style="left: 24.242424242424242%;"></a>
+    
+        <a href="../key-value_coding_fundamentals/dot_syntax_and_key-value_coding.html" title="Dot Syntax and Key-Value Coding" class="chapter  " data-progress="3.4" style="left: 27.272727272727273%;"></a>
+    
+        <a href="../key-value_coding_accessor_methods/README.html" title="Key-Value Coding Accessor Methods" class="chapter  new-chapter" data-progress="4" style="left: 30.303030303030305%;"></a>
+    
+        <a href="../key-value_coding_accessor_methods/commonly_used_accessor_patterns.html" title="Commonly Used Accessor Patterns" class="chapter  " data-progress="4.1" style="left: 33.333333333333336%;"></a>
+    
+        <a href="../key-value_coding_accessor_methods/collection_accessor_patterns_for_to-many_properties.html" title="Collection Accessor Patterns for To-Many Properties" class="chapter  " data-progress="4.2" style="left: 36.36363636363637%;"></a>
+    
+        <a href="../key-value_coding_accessor_methods/indexed_accessor_pattern.html" title="Indexed Accessor Pattern" class="chapter  " data-progress="4.2.1" style="left: 39.39393939393939%;"></a>
+    
+        <a href="../key-value_coding_accessor_methods/unordered_accessor_pattern.html" title="Unordered Accessor Pattern" class="chapter  " data-progress="4.2.2" style="left: 42.42424242424242%;"></a>
+    
+        <a href="../key-value_validation/README.html" title="Key-Value Validation" class="chapter  new-chapter" data-progress="5" style="left: 45.45454545454545%;"></a>
+    
+        <a href="../key-value_validation/validation_method_naming_convention" title="Validation Method Naming Convention" class="chapter  " data-progress="5.1" style="left: 48.484848484848484%;"></a>
+    
+        <a href="../key-value_validation/implementing_a_validation_method" title="Implementing a Validation Method" class="chapter  " data-progress="5.2" style="left: 51.515151515151516%;"></a>
+    
+        <a href="../key-value_validation/invoking_validation_methods" title="Invoking Validation Methods" class="chapter  " data-progress="5.3" style="left: 54.54545454545455%;"></a>
+    
+        <a href="../key-value_validation/automatic_validation" title="Automatic Validation" class="chapter  " data-progress="5.4" style="left: 57.57575757575758%;"></a>
+    
+        <a href="../key-value_validation/validation_of_scalar_values" title="Validation of Scalar Values" class="chapter  " data-progress="5.5" style="left: 60.60606060606061%;"></a>
+    
+        <a href="../ensuring_kvc_compliance/README.html" title="Ensuring KVC Compliance" class="chapter  new-chapter" data-progress="6" style="left: 63.63636363636363%;"></a>
+    
+        <a href="../ensuring_kvc_compliance/attribute_and_to-one_relationship_compliance" title="Attribute and To-One Relationship Compliance" class="chapter  " data-progress="6.1" style="left: 66.66666666666667%;"></a>
+    
+        <a href="../ensuring_kvc_compliance/indexed_to-many_relationship_compliance" title="Indexed To-Many Relationship Compliance" class="chapter  " data-progress="6.2" style="left: 69.6969696969697%;"></a>
+    
+        <a href="../ensuring_kvc_compliance/unordered_to-many_relationship_compliance" title="Unordered To-Many Relationship Compliance" class="chapter  " data-progress="6.3" style="left: 72.72727272727273%;"></a>
+    
+        <a href="../scalar_and_structure_support/README.html" title="Scalar and Structure Support" class="chapter  new-chapter" data-progress="7" style="left: 75.75757575757575%;"></a>
+    
+        <a href="../scalar_and_structure_support/representing_non-object_values" title="Representing Non-Object Values" class="chapter  " data-progress="7.1" style="left: 78.78787878787878%;"></a>
+    
+        <a href="../scalar_and_structure_support/handling_nil_values" title="Handling nil Values" class="chapter  " data-progress="7.2" style="left: 81.81818181818181%;"></a>
+    
+        <a href="../scalar_and_structure_support/wrapping_and_unwrapping_scalar_types" title="Wrapping and Unwrapping Scalar Types" class="chapter  " data-progress="7.3" style="left: 84.84848484848484%;"></a>
+    
+        <a href="../scalar_and_structure_support/wrapping_and_unwrapping_structs" title="Wrapping and Unwrapping Structs" class="chapter  " data-progress="7.4" style="left: 87.87878787878788%;"></a>
+    
+        <a href="../collection_operators/README" title="Collection Operators" class="chapter  new-chapter" data-progress="8" style="left: 90.9090909090909%;"></a>
+    
+        <a href="../accessor_search_implementation_details/README" title="Accessor Search Implementation Details" class="chapter  new-chapter" data-progress="9" style="left: 93.93939393939394%;"></a>
+    
+        <a href="../describing_property_relationships/README" title="Describing Property Relationships" class="chapter  " data-progress="10" style="left: 96.96969696969697%;"></a>
+    
+        <a href="../performance_considerations/README" title="Performance Considerations" class="chapter  " data-progress="11" style="left: 100%;"></a>
+    
+    </div>
+</div>
+
+                <div class="page-inner">
+                
+                    <section class="normal" id="section-gitbook_157">
+                    
+                        <h1 id="key-value-coding-fundamentals">Key-Value Coding Fundamentals</h1>
+<hr>
+<p>This article describes the basic principles of key-value coding.</p>
+
+                    
+                    </section>
+                
+                </div>
+            </div>
+        </div>
+
+        
+        <a href="../terminology/README.html" class="navigation navigation-prev " aria-label="Previous page: Terminology"><i class="fa fa-angle-left"></i></a>
+        
+        
+        <a href="../key-value_coding_fundamentals/keys_and_key_paths.html" class="navigation navigation-next " aria-label="Next page: Keys and Key Paths"><i class="fa fa-angle-right"></i></a>
+        
+    </div>
+</div>
+
+        
+<script src="../gitbook/jsrepl/jsrepl.js" id="jsrepl-script"></script>
+<script src="../gitbook/app.js"></script>
+
+    
+    <script src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    
+
+    
+    <script src="../gitbook/plugins/gitbook-plugin-mathjax/plugin.js"></script>
+    
+
+<script>
+require(["gitbook"], function(gitbook) {
+    var config = {};
+    gitbook.start(config);
+});
+</script>
+
+        
+    </body>
+    
+</html>
